@@ -4,15 +4,35 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// components
+import { CrearAutosComponent } from './crear-autos/crear-autos.component';
+import { ListarAutosComponent } from './listar-autos/listar-autos.component';
+
+
+// forms modules
+import { FormsModule, ReactiveFormsModule }  from '@angular/forms'; 
+
+import { HttpClientModule } from '@angular/common/http';
+
+import { AutosService } from './autos.service';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CrearAutosComponent,
+    ListarAutosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ 
+    AutosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
